@@ -9,11 +9,11 @@
  *                 else out does not change (out[t+1] = out[t])
  */
 
-CHIP Bit {
-    IN in, load;
+CHIP Bit { 
+    IN in, load; // Getting an client-side error stating that there is an illegal terminator on this line.
     OUT out;
 
     PARTS:
-    Mux(a=out, b=in, sel=load, out=nextState);
-    DFF(in=nextState, out=out);
+    Mux(a=t1, b=in, sel=load, out=nextState);
+    DFF(in=nextState, out=t1, out=out);
 }
